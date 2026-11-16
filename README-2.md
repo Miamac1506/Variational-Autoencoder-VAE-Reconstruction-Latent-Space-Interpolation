@@ -5,16 +5,14 @@ A convolutional **Variational Autoencoder** built in **PyTorch**, used in two ex
 - **Part A:** train a VAE on a single image, then see how it reconstructs a completely different image
 - **Part B:** train a VAE on two images together, then blend between them by interpolating in the latent space
 
-> Machine Learning II — Assignment 7 · Mia Mac
-
 ---
 
 ## Repository Contents
 
 | File | Description |
 |---|---|
-| `Mia_Mac_Assignment_7_A_.ipynb` | Part A: single-image training and out-of-distribution reconstruction |
-| `Mia_Mac_Assignment_7_B_.ipynb` | Part B: joint training on two images and latent space interpolation |
+| `Part A` | Part A: single-image training and out-of-distribution reconstruction |
+| `Part B` | Part B: joint training on two images and latent space interpolation |
 | `train.jpeg` | Image 1: a golden retriever |
 | `test.jpeg` | Image 2: a UChicago building |
 
@@ -85,42 +83,3 @@ where Ω is the angle between the two vectors. The result is rescaled to the int
 | Training data | Dog only | Dog + building |
 | Output for the building | A dog | A faithful endpoint of the interpolation |
 | What it shows | The limits of a narrow training distribution | How a shared latent space lets you generate meaningful in-between images |
-
-## Getting Started
-
-### Requirements
-- Python 3.8+
-- PyTorch & torchvision
-- Pillow
-- NumPy
-- Matplotlib
-
-```bash
-pip install torch torchvision pillow numpy matplotlib
-```
-
-### Running the Notebooks
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-jupyter notebook
-```
-
-Before running, set the image paths in each notebook to point to your files:
-
-```python
-TRAIN_IMAGE = "train.jpeg"   # Image 1
-TEST_IMAGE  = "test.jpeg"    # Image 2
-```
-
-You can use any two images; they're resized to 64×64 automatically.
-
-> **Hardware:** the notebooks pick the best available device automatically (CUDA → Apple Silicon MPS → CPU). They were run on Apple Silicon (MPS). Because training uses only one or two images, a CPU works too.
-
-## Built With
-- [PyTorch](https://pytorch.org/) & [torchvision](https://pytorch.org/vision/)
-- [Pillow](https://python-pillow.org/)
-- [NumPy](https://numpy.org/) · [Matplotlib](https://matplotlib.org/)
-
-## Author
-**Mia Mac**
